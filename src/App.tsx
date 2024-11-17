@@ -56,6 +56,8 @@ function App() {
       </select>
       <button onClick={notification}>notification</button>
         </div>
+        <h3>Gyroscop</h3>
+        <pre>{JSON.stringify(webApp.gyroscop, null, 2)}</pre>
       </div>
     </>
   )
