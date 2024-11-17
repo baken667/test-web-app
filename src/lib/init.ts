@@ -11,7 +11,9 @@ import {
 export function init(debug: boolean = false): void {
   $debug.set(debug);
 
-  initSdk();
+  initSdk({
+    version: "8.0.0",
+  });
 
   debug &&
     import("eruda").then((lib) => lib.default.init()).catch(console.error);
