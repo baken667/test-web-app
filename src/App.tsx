@@ -5,6 +5,11 @@ function App() {
   // @ts-ignore
   const webApp = window?.Telegram?.WebApp
 
+  
+  function fullscreen() {
+    webApp.requestFullscreen();
+  }
+
   console.log(webApp)
 
   return (
@@ -12,6 +17,7 @@ function App() {
       <pre style={{ color: "var(--tg-theme-text-color)"}}>
         {JSON.stringify(webApp.initData, null, 2)}
       </pre>    
+      <button onClick={fullscreen}>FULLSCREEN</button>
     </>
   )
 }
