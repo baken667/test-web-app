@@ -7,6 +7,24 @@ function App() {
   // @ts-ignore
   const webApp = window?.Telegram?.WebApp
 
+  const [gyroscopeData, setGyroscopeData] = useState<{
+    x: number | null,
+    y: number | null,
+    z: number | null
+  }>({
+    x: null,
+    y: null,
+    z: null
+  })
+
+  function updateGyroscopeData() {
+    setGyroscopeData({
+      x: webApp.Gyroscope.x,
+      y: webApp.Gyroscope.y,
+      z: webApp.Gyroscope.z
+    })
+  }
+
   
   function fullscreen() {
     webApp.requestFullscreen();
@@ -31,6 +49,8 @@ function App() {
     webApp.Gyroscope.start({
       refresh_rate: 500
     })
+
+    setInterval(updateGyroscopeData, 500)
   }
 
   return (
@@ -66,7 +86,7 @@ function App() {
         </div>
         <h3>Gyroscope</h3>
         <button onClick={startGyro}>start</button>
-        <pre>{JSON.stringify(webApp.Gyroscope, null, 2)}</pre>
+        <pre>isStarted: {webApp.Gyroscope.isStarted ? 'true' : 'false'}</pre>
       </div>
     </>
   )
