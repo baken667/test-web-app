@@ -7,8 +7,6 @@ function App() {
   // @ts-ignore
   const webApp = window?.Telegram?.WebApp
 
-  console.log(webApp)
-
   
   function fullscreen() {
     webApp.requestFullscreen();
@@ -37,6 +35,9 @@ function App() {
 
   return (
     <>
+      <h1>Telegram Web App</h1>
+      <span>{webApp.platform}</span>
+      <button onClick={() => console.log(webApp) }>console log webapp</button>
     <span>{webApp.version}</span>
       <pre style={{ color: "var(--tg-theme-text-color)"}}>
         {JSON.stringify(webApp.initData, null, 2)}
