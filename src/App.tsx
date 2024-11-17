@@ -28,6 +28,12 @@ function App() {
     webApp.HapticFeedback.notificationOccurred(notStyle)
   }
 
+  function startGyro() {
+    webApp.Gyroscope.start({
+      refresh_rate: 2000
+    })
+  }
+
   return (
     <>
     <span>{webApp.version}</span>
@@ -56,7 +62,8 @@ function App() {
       </select>
       <button onClick={notification}>notification</button>
         </div>
-        <h3>Gyroscop</h3>
+        <h3>Gyroscope</h3>
+        <button onClick={startGyro}>start</button>
         <pre>{JSON.stringify(webApp.Gyroscope, null, 2)}</pre>
       </div>
     </>
