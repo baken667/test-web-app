@@ -15,6 +15,7 @@ function App() {
   }
 
   console.log(webApp)
+  console.log(webApp.version)
 
   return (
     <>
