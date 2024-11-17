@@ -7,6 +7,8 @@ function App() {
   // @ts-ignore
   const webApp = window?.Telegram?.WebApp
 
+  console.log(webApp)
+
   
   function fullscreen() {
     webApp.requestFullscreen();
@@ -20,7 +22,6 @@ function App() {
   const [notStyle, setNotStyle] = useState<'error'|'success'|'warning'>('error')
 
   function impactOccurred() {
-    console.log(webApp)
     webApp.HapticFeedback.impactOccurred(style)
   }
 
@@ -30,7 +31,7 @@ function App() {
 
   function startGyro() {
     webApp.Gyroscope.start({
-      refresh_rate: 1000
+      refresh_rate: 500
     })
   }
 
