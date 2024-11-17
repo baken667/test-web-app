@@ -25,7 +25,7 @@ function App() {
   }
 
   function notification() {
-    webApp.HapticFeedback.notification(notStyle)
+    webApp.HapticFeedback.notificationOccurred(notStyle)
   }
 
   return (
