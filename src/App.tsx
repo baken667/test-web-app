@@ -10,6 +10,10 @@ function App() {
     webApp.requestFullscreen();
   }
 
+  function homescreen() {
+    webApp.addToHomeScreen();
+  }
+
   console.log(webApp)
 
   return (
@@ -18,6 +22,7 @@ function App() {
         {JSON.stringify(webApp.initData, null, 2)}
       </pre>    
       <button onClick={fullscreen}>FULLSCREEN</button>
+      <button onClick={homescreen}>homescreen</button>
     </>
   )
 }
