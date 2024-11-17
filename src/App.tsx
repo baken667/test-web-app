@@ -87,6 +87,7 @@ function App() {
         <h3>Gyroscope</h3>
         <button onClick={startGyro}>start</button>
         <pre>isStarted: {webApp.Gyroscope.isStarted ? 'true' : 'false'}</pre>
+        <pre>{JSON.stringify(gyroscopeData, null, 2)}</pre>
       </div>
     </>
   )
