@@ -30,7 +30,7 @@ function App() {
 
   function startGyro() {
     webApp.Gyroscope.start({
-      refresh_rate: 2000
+      refresh_rate: 1000
     })
   }
 
