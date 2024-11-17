@@ -17,10 +17,15 @@ function App() {
   }
 
   const [style, setStyle] = useState<'light'|'medium'|'heavy'|'rigid'|'soft'>('light')
+  const [notStyle, setNotStyle] = useState<'error'|'success'|'warning'>('error')
 
   function impactOccurred() {
     console.log(webApp)
     webApp.HapticFeedback.impactOccurred(style)
+  }
+
+  function notification() {
+    webApp.HapticFeedback.notification(notStyle)
   }
 
   return (
@@ -31,7 +36,10 @@ function App() {
       </pre>    
       <button onClick={fullscreen}>FULLSCREEN</button>
       <button onClick={homescreen}>homescreen</button>
-      <select onChange={(e) => setStyle(e.target.value as any)} value={style}>
+      <div>
+        <h3>Haptic feedback</h3>
+        <div>
+        <select onChange={(e) => setStyle(e.target.value as any)} value={style}>
         <option value="light">light</option>
         <option value="medium">medium</option>
         <option value="heavy">heavy</option>
@@ -39,6 +47,16 @@ function App() {
         <option value="soft">soft</option>
       </select>
       <button onClick={impactOccurred}>impactOccurred</button>
+        </div>
+        <div>
+        <select onChange={(e) => setNotStyle(e.target.value as any)} value={notStyle}>
+        <option value="error">error</option>
+        <option value="success">success</option>
+        <option value="warning">warning</option>  
+      </select>
+      <button onClick={notification}>notification</button>
+        </div>
+      </div>
     </>
   )
 }
