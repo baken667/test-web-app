@@ -63,6 +63,7 @@ function App() {
         {JSON.stringify(webApp.initData, null, 2)}
       </pre>    
       <button onClick={fullscreen}>FULLSCREEN</button>
+      <button onClick={() => webApp.exitFullscreen()}>EXIT FULLSCREEN</button>
       <button onClick={homescreen}>homescreen</button>
       <div>
         <h3>Haptic feedback</h3>
@@ -84,6 +85,9 @@ function App() {
       </select>
       <button onClick={notification}>notification</button>
         </div>
+        <h3>Orientation</h3>
+        <button onClick={() => webApp.lockOrientation()}>lock</button>
+        <button onClick={() => webApp.unlockOrientation()}>unlock</button>
         <h3>Gyroscope</h3>
         <button onClick={startGyro}>start</button>
         <pre>isStarted: {webApp.Gyroscope.isStarted ? 'true' : 'false'}</pre>
