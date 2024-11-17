@@ -20,7 +20,7 @@ function App() {
 
   function impactOccurred() {
     console.log(webApp)
-    webApp.impactOccurred(style)
+    webApp.HapticFeedback.impactOccurred(style)
   }
 
   return (
