@@ -5,9 +5,11 @@ function App() {
   // @ts-ignore
   const webApp = window?.Telegram?.WebApp
 
+  console.log(webApp)
+
   return (
     <>
-      <pre>
+      <pre style={{ color: "var(--tg-theme-text-color)"}}>
         {JSON.stringify(webApp.initData, null, 2)}
       </pre>    
     </>
