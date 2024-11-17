@@ -14,11 +14,9 @@ function App() {
     webApp.addToHomeScreen();
   }
 
-  console.log(webApp)
-  console.log(webApp.version)
-
   return (
     <>
+    <span>{webApp.version}</span>
       <pre style={{ color: "var(--tg-theme-text-color)"}}>
         {JSON.stringify(webApp.initData, null, 2)}
       </pre>    
