@@ -2,6 +2,7 @@
 
 function App() {
   // const lp = useLaunchParams()
+  // @ts-ignore
   const webApp = window?.Telegram?.WebApp
 
   return (
