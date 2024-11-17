@@ -7,7 +7,7 @@ const rootEl = document.getElementById('root')
 const root = createRoot(rootEl!)
 
 try {
-  init(true)
+  // init(true)
 
   root.render(
     <StrictMode>

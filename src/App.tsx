@@ -1,12 +1,13 @@
-import { useLaunchParams } from "@telegram-apps/sdk-react"
+// import { useLaunchParams } from "@telegram-apps/sdk-react"
 
 function App() {
-  const lp = useLaunchParams()
+  // const lp = useLaunchParams()
+  const webApp = window?.Telegram?.WebApp
 
   return (
     <>
       <pre>
-        {JSON.stringify(lp, null, 2)}
+        {JSON.stringify(webApp.initData, null, 2)}
       </pre>    
     </>
   )
