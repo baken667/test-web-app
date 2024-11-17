@@ -19,6 +19,7 @@ function App() {
   const [style, setStyle] = useState<'light'|'medium'|'heavy'|'rigid'|'soft'>('light')
 
   function impactOccurred() {
+    console.log(webApp)
     webApp.impactOccurred(style)
   }
 
