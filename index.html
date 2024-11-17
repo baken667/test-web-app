@@ -5,6 +5,37 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
+    <script>
+      function sessionStorageSet(key, value) {
+        try {
+          window.sessionStorage.setItem('__telegram__' + key, JSON.stringify(value));
+          return true;
+        } catch (e) {}
+        return false;
+      }
+    
+      function sessionStorageGet(key) {
+        try {
+          return JSON.parse(window.sessionStorage.getItem('__telegram__' + key));
+        } catch (e) {}
+        return null;
+      }
+    
+      var appTgVersion = 8.0;
+    
+      var initParams = sessionStorageGet('initParams');
+      if (initParams) {
+        if (!initParams.tgWebAppVersion) {
+          initParams.tgWebAppVersion = appTgVersion;
+        }
+      } else {
+        initParams = {
+          tgWebAppVersion: appTgVersion
+        };
+      }
+    
+      sessionStorageSet('initParams', initParams);
+    </script>
     <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
   </head>
   <body style="background: var(--tg-theme-bg-color); color: var(--tg-theme-text-color)">
